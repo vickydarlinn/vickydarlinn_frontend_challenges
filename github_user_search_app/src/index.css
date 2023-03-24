@@ -61,10 +61,14 @@ a {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .logo {
   font-weight: 700;
   font-size: 2.4rem;
+}
+.themeMode {
+  cursor: pointer;
 }
 /* search bar */
 .search_tab {
@@ -79,7 +83,7 @@ header {
 .search_tab div {
   display: flex;
   align-items: center;
-  min-width: 80%;
+  width: 80%;
   /* border: 1px solid red; */
   margin-left: 1rem;
   gap: 10px;
@@ -114,18 +118,16 @@ header {
 
 .user_detail_container {
   border-radius: 15px;
-  padding: 5rem 2rem;
+  padding: 3rem;
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  /* grid-template-columns: repeat(1fr, 3); */
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(1fr, 3);
+  grid-template-rows: repeat(1fr, 3);
   background-color: var(--container_bg_color);
 }
 .user_image {
   object-fit: cover;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 .user_image img {
   width: 120px;
@@ -133,21 +135,24 @@ header {
   border-radius: 50%;
   display: block;
 }
-.user_detail {
-  padding: 0 2rem;
-  /* border: 1px solid pink; */
-}
-.user_detail__name_and_joined_date {
+.user_detail__name_and_date {
+  grid-column-start: 2;
+  grid-column-end: 4;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  width: 100%;
 }
+
 .user_detail__username {
   font-weight: 400;
   color: var(--btn_color);
 }
-.user_detail__bio {
-  margin: 3rem 0;
+
+.no_change {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
 /* work */
 .user_detail__work {
@@ -185,3 +190,30 @@ header {
   text-align: center;
 }
 /* 139 */
+@media screen and (max-width: 630px) {
+  .app {
+    min-width: 80vw;
+  }
+  .user_detail__name_and_date {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .no_change {
+    grid-row-start: 2;
+    grid-column-start: 1;
+  }
+}
+@media screen and (max-width: 550px) {
+  body {
+    background-color: black;
+  }
+  .user_detail_container {
+    padding: 1rem;
+  }
+  .user_detail__address,
+  .user_detail_work_and_company {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: initial;
+  }
+}

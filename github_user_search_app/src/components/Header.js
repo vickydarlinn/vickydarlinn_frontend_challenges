@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <div className="logo">devfinder</div>
-      <div className="themChanger">
+      <div className="themeMode">
         <i>
           <BsMoonFill />
         </i>{" "}

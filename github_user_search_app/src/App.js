@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import "./index.css";
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
@@ -9,7 +8,7 @@ const App = () => {
   const [query, setQuery] = useState("");
   const [data, setData] = useState("");
   const [err, setErr] = useState(false);
-
+  const [lightMode, setLightMode] = useState(true);
   useEffect(() => {
     if (query !== "") {
       getGithubUserData();

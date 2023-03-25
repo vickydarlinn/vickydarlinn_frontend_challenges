@@ -8,7 +8,7 @@ const App = () => {
   const [query, setQuery] = useState("");
   const [data, setData] = useState("");
   const [err, setErr] = useState(false);
-  const [lightMode, setLightMode] = useState(true);
+  const [lightMode, setLightMode] = useState("light");
   useEffect(() => {
     if (query !== "") {
       getGithubUserData();
@@ -26,7 +26,10 @@ const App = () => {
   }
 
   return (
-    <div className="app">
+    <div
+      className="app"
+      data-theme={`${lightMode === "light" ? "light" : "dark"}`}
+    >
       <Header />
       <SearchBar setQuery={setQuery} err={err} />
       <UserCard data={data} />

@@ -211,7 +211,7 @@ header {
 }
 /* 139 */
 @media screen and (max-width: 630px) {
-  .app {
+  .container {
     min-width: 80vw;
   }
   .user_detail__name_and_date {
@@ -224,9 +224,6 @@ header {
   }
 }
 @media screen and (max-width: 550px) {
-  body {
-    background-color: black;
-  }
   .user_detail_container {
     padding: 1rem;
   }
